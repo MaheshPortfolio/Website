@@ -1,10 +1,165 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>My First Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahesh | Portfolio</title>
+  <style>
+    :root{--bg:#0b1020;--card:#121a33;--text:#e8ecff;--muted:#aab2d5;--accent:#7c5cff}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:linear-gradient(180deg,#0b1020,#050814);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:24px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px;position:sticky;top:0;
+      background:rgba(11,16,32,.7);backdrop-filter:blur(10px);padding:14px 24px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .logo{font-weight:800;letter-spacing:.5px}
+    .nav a{color:var(--muted);margin-left:14px} .nav a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:10px 14px;
+      border-radius:12px;font-weight:700}
+    .hero{padding:52px 0 18px;display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}
+    .tag{display:inline-block;border:1px solid rgba(255,255,255,.15);color:var(--muted);padding:8px 12px;border-radius:999px}
+    h1{font-size:44px;line-height:1.1;margin:14px 0}
+    .lead{color:var(--muted);font-size:18px;line-height:1.6}
+    .card{background:rgba(18,26,51,.8);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .chip{display:inline-block;background:rgba(124,92,255,.15);border:1px solid rgba(124,92,255,.35);
+      color:#cfc6ff;padding:6px 10px;border-radius:999px;font-size:13px;margin:6px 6px 0 0}
+    .section{padding:18px 0}
+    .section h2{margin:0 0 12px;font-size:22px}
+    .muted{color:var(--muted)}
+    .proj h3{margin:8px 0 6px}
+    .proj p{margin:0;color:var(--muted);line-height:1.55}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:12px;color:var(--text);font-weight:700}
+    .ghost:hover{border-color:rgba(255,255,255,.35)}
+    .footer{padding:26px 0;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,.10);margin-top:28px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.grid2{grid-template-columns:1fr} h1{font-size:36px}}
+  </style>
 </head>
 <body>
-    <h1>Hello, I'm Mahesh 👋</h1>
-    <p>This is my first website hosted on GitHub.</p>
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="logo">Mahesh</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Hire Me</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <div class="hero">
+      <div>
+        <span class="tag">👋 Hi, I’m Mahesh</span>
+        <h1>Frontend / Web Developer<br/>Building clean & modern websites</h1>
+        <p class="lead">
+          I build responsive websites and small web apps. I’m currently learning HTML, CSS, JavaScript and creating projects to improve.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="ghost" href="https://github.com/maheshportfolio" target="_blank">GitHub</a>
+          <a class="ghost" href="#" target="_blank">Resume (add link)</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Quick Info</h2>
+        <p class="muted" style="margin:0 0 10px;">📍 Your City, India</p>
+        <p class="muted" style="margin:0 0 10px;">🎯 Looking for: Internship / Junior role</p>
+        <p class="muted" style="margin:0;">✉️ Email: yourmail@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="section">
+      <h2>About Me</h2>
+      <div class="card">
+        <p class="muted" style="margin:0;line-height:1.7">
+          Write 3–4 lines about yourself here. Example: “I’m a student / fresher who loves web development.
+          I enjoy building simple, fast websites and learning new technologies.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="card">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Git & GitHub</span>
+        <span class="chip">Responsive Design</span>
+        <span class="chip">Bootstrap (optional)</span>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card proj">
+          <span class="chip">Project 1</span>
+          <h3>Calculator App</h3>
+          <p>A simple calculator using HTML, CSS and JavaScript.</p>
+          <div class="actions">
+            <a class="ghost" href="#" target="_blank">Live Demo</a>
+            <a class="ghost" href="#" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="card proj">
+          <span class="chip">Project 2</span>
+          <h3>To-Do List</h3>
+          <p>To-do app with add, delete and local storage.</p>
+          <div class="actions">
+            <a class="ghost" href="#" target="_blank">Live Demo</a>
+            <a class="ghost" href="#" target="_blank">Code</a>
+          </div>
+        </div>
+
+        <div class="card proj">
+          <span class="chip">Project 3</span>
+          <h3>Landing Page</h3>
+          <p>A responsive landing page for a product/service.</p>
+          <div class="actions">
+            <a class="ghost" href="#" target="_blank">Live Demo</a>
+            <a class="ghost" href="#" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px;">Tip: Replace the project titles + links with your real projects.</p>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid2">
+        <div class="card">
+          <p class="muted" style="margin:0 0 10px;">Email</p>
+          <p style="margin:0;font-weight:700;">yourmail@gmail.com</p>
+        </div>
+        <div class="card">
+          <p class="muted" style="margin:0 0 10px;">Social</p>
+          <p style="margin:0;font-weight:700;">
+            <a href="https://github.com/maheshportfolio" target="_blank">GitHub</a> ·
+            <a href="#" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="y"></span> Mahesh. Built with HTML/CSS and hosted on GitHub Pages.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
