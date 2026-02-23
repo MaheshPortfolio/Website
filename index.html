@@ -3,158 +3,330 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahesh | Portfolio</title>
+  <title>K. Mahesh Boopathi | Portfolio</title>
+  <meta name="description" content="Portfolio of K. Mahesh Boopathi - E-Commerce Operations, Marketplace Management, Digital Marketing, CRM (Odoo), SEO." />
   <style>
-    :root{--bg:#0b1020;--card:#121a33;--text:#e8ecff;--muted:#aab2d5;--accent:#7c5cff}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:linear-gradient(180deg,#0b1020,#050814);color:var(--text)}
+    :root{
+      --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#aab2d5;
+      --accent:#7c5cff; --line:rgba(255,255,255,.10);
+      --chip:rgba(124,92,255,.15); --chipLine:rgba(124,92,255,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b1020,#050814);
+      color:var(--text);
+    }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1050px;margin:0 auto;padding:24px}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:14px;position:sticky;top:0;
-      background:rgba(11,16,32,.7);backdrop-filter:blur(10px);padding:14px 24px;border-bottom:1px solid rgba(255,255,255,.08)}
-    .logo{font-weight:800;letter-spacing:.5px}
-    .nav a{color:var(--muted);margin-left:14px} .nav a:hover{color:var(--text)}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:10px 14px;
-      border-radius:12px;font-weight:700}
-    .hero{padding:52px 0 18px;display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}
-    .tag{display:inline-block;border:1px solid rgba(255,255,255,.15);color:var(--muted);padding:8px 12px;border-radius:999px}
-    h1{font-size:44px;line-height:1.1;margin:14px 0}
-    .lead{color:var(--muted);font-size:18px;line-height:1.6}
-    .card{background:rgba(18,26,51,.8);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:18px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .chip{display:inline-block;background:rgba(124,92,255,.15);border:1px solid rgba(124,92,255,.35);
-      color:#cfc6ff;padding:6px 10px;border-radius:999px;font-size:13px;margin:6px 6px 0 0}
-    .section{padding:18px 0}
-    .section h2{margin:0 0 12px;font-size:22px}
-    .muted{color:var(--muted)}
-    .proj h3{margin:8px 0 6px}
-    .proj p{margin:0;color:var(--muted);line-height:1.55}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:12px;color:var(--text);font-weight:700}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      display:flex; justify-content:space-between; align-items:center; gap:14px;
+      background:rgba(11,16,32,.7); backdrop-filter:blur(10px);
+      padding:14px 22px; border-bottom:1px solid var(--line);
+    }
+    .logo{font-weight:900; letter-spacing:.4px}
+    .navlinks a{color:var(--muted); margin-left:14px}
+    .navlinks a:hover{color:var(--text)}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--accent); color:white;
+      padding:10px 14px; border-radius:12px; font-weight:800;
+    }
+    .ghost{
+      display:inline-flex; align-items:center; gap:8px;
+      background:transparent; color:var(--text);
+      border:1px solid rgba(255,255,255,.18);
+      padding:10px 14px; border-radius:12px; font-weight:800;
+    }
     .ghost:hover{border-color:rgba(255,255,255,.35)}
-    .footer{padding:26px 0;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,.10);margin-top:28px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.grid2{grid-template-columns:1fr} h1{font-size:36px}}
+    .hero{
+      padding:44px 0 12px;
+      display:grid; grid-template-columns:1.3fr .7fr; gap:16px; align-items:start;
+    }
+    .tag{
+      display:inline-block; border:1px solid rgba(255,255,255,.15);
+      color:var(--muted); padding:8px 12px; border-radius:999px;
+    }
+    h1{font-size:42px; line-height:1.08; margin:14px 0}
+    .lead{color:var(--muted); font-size:18px; line-height:1.65; margin:0}
+    .card{
+      background:rgba(18,26,51,.82);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+    .section{padding:16px 0}
+    .section h2{margin:0 0 12px; font-size:22px}
+    .muted{color:var(--muted)}
+    .chips{margin-top:6px}
+    .chip{
+      display:inline-block;
+      background:var(--chip);
+      border:1px solid var(--chipLine);
+      color:#cfc6ff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      margin:6px 6px 0 0;
+    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .item h3{margin:6px 0 6px; font-size:18px}
+    .item p{margin:0; color:var(--muted); line-height:1.6}
+    .timeline{display:grid; gap:12px}
+    .role{display:grid; gap:6px}
+    .roleTop{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .roleTop strong{font-size:16px}
+    .role ul{margin:6px 0 0 18px; color:var(--muted); line-height:1.6}
+    .footer{
+      margin-top:28px;
+      padding:22px 0;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .grid2,.grid3{grid-template-columns:1fr}
+    }
   </style>
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- NAV -->
   <div class="nav">
-    <div class="logo">Mahesh</div>
-    <div>
+    <div class="logo">K. Mahesh Boopathi</div>
+    <div class="navlinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="#contact">Hire Me</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="btn">Contact</a>
     </div>
   </div>
 
   <div class="wrap">
-    <!-- Hero -->
+    <!-- HERO -->
     <div class="hero">
-      <div>
-        <span class="tag">👋 Hi, I’m Mahesh</span>
-        <h1>Frontend / Web Developer<br/>Building clean & modern websites</h1>
+      <div class="card">
+        <span class="tag">E-Commerce Operations • Marketplace Management • Digital Marketing</span>
+        <h1>Helping brands grow on Amazon / Flipkart / Meesho / JioMart</h1>
         <p class="lead">
-          I build responsive websites and small web apps. I’m currently learning HTML, CSS, JavaScript and creating projects to improve.
+          Results-driven E-Commerce & Digital Operations professional with experience in online marketplace management,
+          CRM (Odoo), digital marketing, SEO, and customer relationship management. :contentReference[oaicite:1]{index=1}
         </p>
         <div class="actions">
+          <!-- Update these links -->
           <a class="btn" href="#projects">View Projects</a>
-          <a class="ghost" href="https://github.com/maheshportfolio" target="_blank">GitHub</a>
-          <a class="ghost" href="#" target="_blank">Resume (add link)</a>
+          <a class="ghost" href="https://www.linkedin.com/in/mahesh542" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="ghost" href="#" target="_blank" rel="noreferrer">Resume PDF (add link)</a>
         </div>
       </div>
 
       <div class="card">
-        <h2 style="margin:0 0 8px;">Quick Info</h2>
-        <p class="muted" style="margin:0 0 10px;">📍 Your City, India</p>
-        <p class="muted" style="margin:0 0 10px;">🎯 Looking for: Internship / Junior role</p>
-        <p class="muted" style="margin:0;">✉️ Email: yourmail@gmail.com</p>
+        <h2 style="margin:0 0 10px;">Quick Info</h2>
+        <p class="muted" style="margin:0 0 10px;">📍 Dindigul, Tamil Nadu (India)</p>
+        <p class="muted" style="margin:0 0 10px;">📞 +91 9655735712</p>
+        <p class="muted" style="margin:0 0 10px;">✉️ Maheshboopathi542@gmail.com</p>
+        <p class="muted" style="margin:0;">🎯 Open to: E-Commerce / Digital Ops roles</p>
+        <div class="chips">
+          <span class="chip">Amazon Ops</span>
+          <span class="chip">Odoo CRM</span>
+          <span class="chip">Meta Ads</span>
+          <span class="chip">SEO</span>
+        </div>
       </div>
     </div>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <div id="about" class="section">
-      <h2>About Me</h2>
+      <h2>About</h2>
       <div class="card">
-        <p class="muted" style="margin:0;line-height:1.7">
-          Write 3–4 lines about yourself here. Example: “I’m a student / fresher who loves web development.
-          I enjoy building simple, fast websites and learning new technologies.”
+        <p class="muted" style="margin:0; line-height:1.75;">
+          I manage end-to-end seller operations across marketplaces, improve product visibility with catalog & content optimization,
+          run digital campaigns (Meta Ads), and support CRM-driven lead nurturing and customer engagement. :contentReference[oaicite:2]{index=2}
         </p>
       </div>
     </div>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <div id="skills" class="section">
       <h2>Skills</h2>
       <div class="card">
-        <span class="chip">HTML</span>
-        <span class="chip">CSS</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">Git & GitHub</span>
-        <span class="chip">Responsive Design</span>
-        <span class="chip">Bootstrap (optional)</span>
+        <div class="chips">
+          <span class="chip">Marketplace Ops (Amazon/Flipkart/Meesho/JioMart)</span>
+          <span class="chip">Product Listing Optimization</span>
+          <span class="chip">Catalog & A+ Content</span>
+          <span class="chip">Pricing Strategy</span>
+          <span class="chip">Order Fulfillment</span>
+          <span class="chip">Meta Ads (FB/Instagram)</span>
+          <span class="chip">Google Ads</span>
+          <span class="chip">Amazon Ads</span>
+          <span class="chip">Email Marketing</span>
+          <span class="chip">WhatsApp Marketing</span>
+          <span class="chip">CRM (Odoo)</span>
+          <span class="chip">SEO (On-page & Technical)</span>
+          <span class="chip">Google Analytics</span>
+          <span class="chip">Search Console</span>
+          <span class="chip">Reporting & Data Analysis</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">Figma (Basic)</span>
+          <span class="chip">Excel</span>
+          <span class="chip">Linux (Ubuntu)</span>
+          <span class="chip">Python (Basic)</span>
+        </div>
+        <p class="muted" style="margin:10px 0 0;">
+          (All skills listed are taken from your resume.) :contentReference[oaicite:3]{index=3}
+        </p>
       </div>
     </div>
 
-    <!-- Projects -->
+    <!-- EXPERIENCE -->
+    <div id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="card timeline">
+
+        <div class="role">
+          <div class="roleTop">
+            <strong>Business Development Executive — Greenrich Enviro Solutions Pvt. Ltd.</strong>
+            <span class="muted">Sep 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Ran email marketing through Odoo CRM: segmentation, promotional messaging, scheduled follow-ups.</li>
+            <li>Executed WhatsApp marketing campaigns (AISENZY) to promote offers and product updates.</li>
+            <li>Developed WordPress corporate & e-commerce websites with payment gateway, lead forms, WhatsApp chat, SEO.</li>
+            <li>Implemented on-page + technical SEO and page speed optimization to improve visibility and rankings.</li>
+          </ul>
+          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:4]{index=4}</p>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <strong>Customer Relationship Executive — CAFS Infotech Pvt. Ltd., Chennai</strong>
+            <span class="muted">Mar 2024 – Sep 2024</span>
+          </div>
+          <ul>
+            <li>Handled customer interactions, service inquiries and escalations; ensured satisfaction and retention.</li>
+            <li>Provided pre-sales and post-sales support; coordinated with sales/ops/accounts for billing & order issues.</li>
+            <li>Updated CRM, tracked engagement, and prepared service/sales reports; analyzed feedback for improvements.</li>
+          </ul>
+          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:5]{index=5}</p>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <strong>Customer Support Engineer — Eureka Forbes Pvt. Ltd., Coimbatore</strong>
+            <span class="muted">Nov 2021 – Sep 2023</span>
+          </div>
+          <ul>
+            <li>Delivered on-site & remote technical support, troubleshooting, installation, preventive maintenance.</li>
+            <li>Diagnosed hardware/system issues; maintained service records and technical reports; supported CRM updates.</li>
+            <li>Conducted customer training and escalated complex issues to engineering teams.</li>
+          </ul>
+          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:6]{index=6}</p>
+        </div>
+
+        <div class="role">
+          <div class="roleTop">
+            <strong>E-Commerce Operations & Marketplace Management (Key Highlights)</strong>
+            <span class="muted">Highlights</span>
+          </div>
+          <ul>
+            <li>Executed end-to-end seller operations: listing, catalog optimization, pricing strategy, fulfillment.</li>
+            <li>Optimized A+ content, brand store layouts, comparison tables, and product images to improve conversion.</li>
+            <li>Launched festival campaigns, coupons, lightning deals; tracked metrics and prepared sales/ROI reports.</li>
+          </ul>
+          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:7]{index=7}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
     <div id="projects" class="section">
       <h2>Projects</h2>
-      <div class="grid">
-        <div class="card proj">
-          <span class="chip">Project 1</span>
-          <h3>Calculator App</h3>
-          <p>A simple calculator using HTML, CSS and JavaScript.</p>
-          <div class="actions">
-            <a class="ghost" href="#" target="_blank">Live Demo</a>
-            <a class="ghost" href="#" target="_blank">Code</a>
-          </div>
+      <div class="grid3">
+        <div class="card item">
+          <h3>Brand Portfolio</h3>
+          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.mygreenbin.in" target="_blank" rel="noreferrer">MyGreenBin.in</a></p>
         </div>
-
-        <div class="card proj">
-          <span class="chip">Project 2</span>
-          <h3>To-Do List</h3>
-          <p>To-do app with add, delete and local storage.</p>
-          <div class="actions">
-            <a class="ghost" href="#" target="_blank">Live Demo</a>
-            <a class="ghost" href="#" target="_blank">Code</a>
-          </div>
+        <div class="card item">
+          <h3>Brand Website</h3>
+          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.recyclixinnovations.com" target="_blank" rel="noreferrer">RecyclixInnovations.com</a></p>
         </div>
-
-        <div class="card proj">
-          <span class="chip">Project 3</span>
-          <h3>Landing Page</h3>
-          <p>A responsive landing page for a product/service.</p>
-          <div class="actions">
-            <a class="ghost" href="#" target="_blank">Live Demo</a>
-            <a class="ghost" href="#" target="_blank">Code</a>
-          </div>
+        <div class="card item">
+          <h3>Multi-Vendor E-Commerce</h3>
+          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.greenrichbazaar.com" target="_blank" rel="noreferrer">GreenrichBazaar.com</a></p>
         </div>
       </div>
-      <p class="muted" style="margin-top:10px;">Tip: Replace the project titles + links with your real projects.</p>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card item">
+          <h3>Multiple Interface-Based Firefighting Robot (2021)</h3>
+          <p>Arduino-based automated robot integrating multiple sensors for fire detection and response.</p>
+        </div>
+        <div class="card item">
+          <h3>Embedded Contact Management System (2023)</h3>
+          <p>Microcontroller-based contact management solution developed during Emertxe Institute training.</p>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:10px;">:contentReference[oaicite:8]{index=8}</p>
     </div>
 
-    <!-- Contact -->
+    <!-- EDUCATION + CERTS -->
+    <div id="education" class="section">
+      <h2>Education & Certifications</h2>
+      <div class="grid2">
+        <div class="card item">
+          <h3>B.E. (Electronics and Communication Engineering)</h3>
+          <p>NPR College of Engineering and Technology, Natham</p>
+          <p class="muted">Year of Graduation: 2021 • CGPA: 6.9</p>
+          <p class="muted" style="margin-top:8px;">:contentReference[oaicite:9]{index=9}</p>
+        </div>
+        <div class="card item">
+          <h3>Certifications</h3>
+          <ul class="muted" style="margin:8px 0 0 18px; line-height:1.7;">
+            <li>Embedded Systems & Linux Training — Emertxe Technology (6 Months)</li>
+            <li>Recent Trends in Embedded Technology — NPR College (2019)</li>
+            <li>Smart India Hackathon (Internal) — NPR College (2020)</li>
+          </ul>
+          <p class="muted" style="margin-top:8px;">:contentReference[oaicite:10]{index=10}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
     <div id="contact" class="section">
       <h2>Contact</h2>
       <div class="grid2">
-        <div class="card">
-          <p class="muted" style="margin:0 0 10px;">Email</p>
-          <p style="margin:0;font-weight:700;">yourmail@gmail.com</p>
+        <div class="card item">
+          <h3>Email</h3>
+          <p><a class="btn" style="padding:8px 10px" href="mailto:Maheshboopathi542@gmail.com">Maheshboopathi542@gmail.com</a></p>
+          <p class="muted" style="margin-top:10px;">Phone: +91 9655735712</p>
+          <p class="muted">Location: Dindigul, Tamil Nadu</p>
+          <p class="muted">:contentReference[oaicite:11]{index=11}</p>
         </div>
-        <div class="card">
-          <p class="muted" style="margin:0 0 10px;">Social</p>
-          <p style="margin:0;font-weight:700;">
-            <a href="https://github.com/maheshportfolio" target="_blank">GitHub</a> ·
-            <a href="#" target="_blank">LinkedIn</a>
-          </p>
+        <div class="card item">
+          <h3>Links</h3>
+          <p class="muted" style="margin:0 0 10px;">Update/replace these if needed:</p>
+          <div class="actions" style="margin-top:0;">
+            <a class="ghost" href="https://www.linkedin.com/in/mahesh542" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="ghost" href="#" target="_blank" rel="noreferrer">GitHub (add link)</a>
+            <a class="ghost" href="#" target="_blank" rel="noreferrer">Resume PDF (add link)</a>
+          </div>
+          <p class="muted" style="margin-top:10px;">Languages: Tamil, English :contentReference[oaicite:12]{index=12}</p>
         </div>
       </div>
     </div>
 
     <div class="footer">
-      © <span id="y"></span> Mahesh. Built with HTML/CSS and hosted on GitHub Pages.
+      © <span id="y"></span> K. Mahesh Boopathi • Hosted on GitHub Pages
     </div>
   </div>
 
