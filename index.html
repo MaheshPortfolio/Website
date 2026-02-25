@@ -1,337 +1,685 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>K. Mahesh Boopathi | Portfolio</title>
-  <meta name="description" content="Portfolio of K. Mahesh Boopathi - E-Commerce Operations, Marketplace Management, Digital Marketing, CRM (Odoo), SEO." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    :root{
-      --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#aab2d5;
-      --accent:#7c5cff; --line:rgba(255,255,255,.10);
-      --chip:rgba(124,92,255,.15); --chipLine:rgba(124,92,255,.35);
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-action) 0%, var(--secondary-action) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:linear-gradient(180deg,#0b1020,#050814);
-      color:var(--text);
+
+    .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-8px); }
+
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
     }
-    a{color:inherit;text-decoration:none}
-    .nav{
-      position:sticky; top:0; z-index:10;
-      display:flex; justify-content:space-between; align-items:center; gap:14px;
-      background:rgba(11,16,32,.7); backdrop-filter:blur(10px);
-      padding:14px 22px; border-bottom:1px solid var(--line);
+
+    .animate-float-delayed { animation: float 6s ease-in-out infinite; animation-delay: -3s; }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .logo{font-weight:900; letter-spacing:.4px}
-    .navlinks a{color:var(--muted); margin-left:14px}
-    .navlinks a:hover{color:var(--text)}
-    .wrap{max-width:1100px; margin:0 auto; padding:24px}
-    .btn{
-      display:inline-flex; align-items:center; gap:8px;
-      background:var(--accent); color:white;
-      padding:10px 14px; border-radius:12px; font-weight:800;
+
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+
+    .blob {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      filter: blur(40px);
+      opacity: 0.5;
     }
-    .ghost{
-      display:inline-flex; align-items:center; gap:8px;
-      background:transparent; color:var(--text);
-      border:1px solid rgba(255,255,255,.18);
-      padding:10px 14px; border-radius:12px; font-weight:800;
-    }
-    .ghost:hover{border-color:rgba(255,255,255,.35)}
-    .hero{
-      padding:44px 0 12px;
-      display:grid; grid-template-columns:1.3fr .7fr; gap:16px; align-items:start;
-    }
-    .tag{
-      display:inline-block; border:1px solid rgba(255,255,255,.15);
-      color:var(--muted); padding:8px 12px; border-radius:999px;
-    }
-    h1{font-size:42px; line-height:1.08; margin:14px 0}
-    .lead{color:var(--muted); font-size:18px; line-height:1.65; margin:0}
-    .card{
-      background:rgba(18,26,51,.82);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-    }
-    .section{padding:16px 0}
-    .section h2{margin:0 0 12px; font-size:22px}
-    .muted{color:var(--muted)}
-    .chips{margin-top:6px}
-    .chip{
-      display:inline-block;
-      background:var(--chip);
-      border:1px solid var(--chipLine);
-      color:#cfc6ff;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
-      margin:6px 6px 0 0;
-    }
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .item h3{margin:6px 0 6px; font-size:18px}
-    .item p{margin:0; color:var(--muted); line-height:1.6}
-    .timeline{display:grid; gap:12px}
-    .role{display:grid; gap:6px}
-    .roleTop{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    .roleTop strong{font-size:16px}
-    .role ul{margin:6px 0 0 18px; color:var(--muted); line-height:1.6}
-    .footer{
-      margin-top:28px;
-      padding:22px 0;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:14px;
-    }
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      h1{font-size:34px}
-      .grid2,.grid3{grid-template-columns:1fr}
+
+    :root {
+      --background: #0a0a0f;
+      --surface: #16161d;
+      --text: #f4f4f5;
+      --primary-action: #a855f7;
+      --secondary-action: #6366f1;
     }
   </style>
 </head>
 
-<body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="logo">K. Mahesh Boopathi</div>
-    <div class="navlinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact" class="btn">Contact</a>
+<body class="h-full overflow-auto" style="background: var(--background); color: var(--text);">
+  <div class="w-full min-h-full relative">
+    <!-- Animated Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="blob absolute w-96 h-96 animate-float" style="background: var(--primary-action); top: -10%; left: -10%;"></div>
+      <div class="blob absolute w-80 h-80 animate-float-delayed" style="background: var(--secondary-action); bottom: 10%; right: -5%;"></div>
+      <div class="blob absolute w-64 h-64 animate-float" style="background: var(--primary-action); top: 40%; right: 20%; animation-delay: -2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="relative z-10 px-6 py-6 md:px-12 lg:px-20">
+      <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <div class="text-2xl font-bold" style="font-family: 'Playfair Display', serif;">
+          <span class="gradint-text" id="nav-name">Mahesh</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8" style="font-family: 'Inter', sans-serif;">
+          <a href="#about" class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity">About</a>
+          <a href="#work" class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity">Work</a>
+          <a href="#contact" class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity">Contact</a>
+        </div>
+
+        <a href="mahes resume.pdf" class="px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
+           style="background: var(--primary-action); font-family: 'Inter', sans-serif;" target="_blank" rel="noopener">
+          Download Resume
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 px-6 md:px-12 lg:px-20 pt-16 pb-32">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-fade-in-up">
+            <p class="text-sm font-medium tracking-widest uppercase mb-4 opacity-60"
+               style="font-family: 'Inter', sans-serif; color: var(--secondar-action);">
+              Welcome to my portfolio
+            </p>
+
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6"
+                style="font-family: 'Playfair Display', serif;" id="hero-name">
+              K. <span class="gradient-tet">Mahesh Boopathi</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl font-light mb-4 opacity-80"
+               style="font-family: 'Inter', sans-serif;" id="hero-title">
+              Digital Marketing • Web Development • E-commerce Executive 
+            </p>
+
+            <p class="text-base leading-relaxed mb-8 opacity-60 max-w-lg"
+               style="font-family: 'Inter', sans-serif;" id="hero-bio">
+              <!-- PASTE YOUR RESUME SUMMARY HERE -->
+              I manage e-commerce operations and digital marketing across marketplaces, focusing on growth, visibility, and performance.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#work" class="px-8 py-4 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg"
+                 style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                View My Work
+              </a>
+
+              <a href="#about" class="px-8 py-4 rounded-full font-medium border transition-all hover:scale-105"
+                 style="border-color: var(--surface); background: var(--surface); font-family: 'Inter', sans-serif;">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Image Area -->
+          <div class="relative animate-fade-in-up stagger-2 flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden" style="background: var(--surface);">
+                <!-- Replace the SVG avatar with your real image -->
+                <img
+                  src="MP IMAGE.jpg"
+                  alt="Profile Photo"
+                  class="w-full h-500px object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- Floating Elements -->
+              <div class="absolute -top-4 -right-4 w-20 h-20 rounded-2xl flex items-center justify-center animate-float"
+                   style="background: var(--primary-action);">
+                <span class="text-3xl">✨</span>
+              </div>
+              <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-xl flex items-center justify-center animate-float-delayed"
+                   style="background: var(--secondary-action);">
+                <span class="text-2xl">📈</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats (edit numbers as per your resume) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 animate-fade-in-up stagger-3">
+          <div class="text-center p-6 rounded-2xl" style="background: var(--surface);">
+            <div class="text-4xl font-bold gradient-text" style="font-family: 'Playfair Display', serif;">2+</div>
+            <div class="text-sm opacity-60 mt-2" style="font-family: 'Inter', sans-serif;">Years Experience</div>
+          </div>
+          <div class="text-center p-6 rounded-2xl" style="background: var(--surface);">
+            <div class="text-4xl font-bold gradient-text" style="font-family: 'Playfair Display', serif;">20+</div>
+            <div class="text-sm opacity-60 mt-2" style="font-family: 'Inter', sans-serif;">Campaigns Managed</div>
+          </div>
+          <div class="text-center p-6 rounded-2xl" style="background: var(--surface);">
+            <div class="text-4xl font-bold gradient-text" style="font-family: 'Playfair Display', serif;">10+</div>
+            <div class="text-sm opacity-60 mt-2" style="font-family: 'Inter', sans-serif;">Projects</div>
+          </div>
+          <div class="text-center p-6 rounded-2xl" style="background: var(--surface);">
+            <div class="text-4xl font-bold gradient-text" style="font-family: 'Playfair Display', serif;">5+</div>
+            <div class="text-sm opacity-60 mt-2" style="font-family: 'Inter', sans-serif;">Skills Tools</div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative z-10 px-6 md:px-12 lg:px-20 py-24" style="background: var(--surface);">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-sm font-medium tracking-widest uppercase mb-4"
+               style="font-family: 'Inter', sans-serif; color: var(--primary-action);">
+              Get to know 
+            </p>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-6"
+                style="font-family: 'Playfair Display', serif;" id="about-heading">
+              About Me
+            </h2>
+
+            <p class="text-lg leading-relaxed opacity-70 mb-8"
+               style="font-family: 'Inter', sans-serif;" id="about-description">
+              <!-- PASTE YOUR ABOUT / SUMMARY FROM RESUME HERE -->
+              I specialize in e-commerce operations, marketplace handling, product listing optimization, SEO basics, and performance marketing support to improve sales and customer experience.
+            </p>
+
+            <!-- Replace these 4 boxes with YOUR key skills -->
+            <div class="grid grid-cols-2 gap-6">
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">📢</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">Digital Marketing</div>
+              </div>
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">🌍</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">Web Development & SEO</div>
+              </div>
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">📊</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">Google Analytics & CRM</div>
+              </div>
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">📨</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">Email & Whatsapp Marketing</div>
+              </div>
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">🎨</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">Graphics Designing & Video Editing</div>
+              </div>
+              <div class="p-4 rounded-xl" style="background: var(--background);">
+                <div class="text-2xl mb-2">🛍️</div>
+                <div class="font-medium" style="font-family: 'Inter', sans-serif;">E Com Management (Amazon & Flikart) </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- About image -->
+          <div class="relative">
+            <div class="w-full aspect-square rounded-3xl overflow-hidden" style="background: var(--background);">
+              <img
+                src="mygreenbin  website images.png"
+                alt="Work preview"
+                class="w-full h-full object-cover opacity-90"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="relative z-10 px-6 md:px-12 lg:px-20 py-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-sm font-medium tracking-widest uppercase mb-4"
+             style="font-family: 'Inter', sans-serif; color: var(--primary-action);">
+            My Portfolio
+          </p>
+          <h2 class="text-4xl md:text-5xl font-bold"
+              style="font-family: 'Playfair Display', serif;" id="work-heading">
+            Featured Work
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="close-up-text-table_1636062-963.avif" alt="Project 1" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Digital Marketing & Social Media</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Meta Ads • Whatsapp & Email Marketing</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 2 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="assets/img/project2.jpg" alt="Project 2" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Web Development</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Off Page & TechnicalSEO • Google Analytics & Search Console</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project Card 3 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="assets/img/project3.jpg" alt="Project 3" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Ecommerce Operations</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Listing • Ads • Coupon& Offers • A+ Content  </p>
+              </div>
+            </div>
+          </a>
+          <!-- Project Card 4 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="close-up-text-table_1636062-963.avif" alt="Project 1" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Lead Generation</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Trade India • India Mart</p>
+              </div>
+            </div>
+          </a>
+          <!-- Project Card 5 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="close-up-text-table_1636062-963.avif" alt="Project 1" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">ODOO CRM</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Automated Work Flow • Work Allocations • Leads Nurture</p>
+              </div>
+            </div>
+          </a>
+          <!-- Project Card 6 -->
+          <a class="card-hover group cursor-pointer" href="https://example.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="close-up-text-table_1636062-963.avif" alt="Project 1" class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Project
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Graphics Designing & AI  </h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Canva • Capcut • HiggsFeild • Dzine AI • Chatgpt </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Carousel Wrapper -->
+  <div class="relative">
+    <!-- Fade edges (optional, looks premium) -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-35 md:w-45 z-10"
+         style="background: linear-gradient(to right, var(--bacground), transparent);"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-24 z-10"
+         style="background: linear-gradient(to left, var(--bakground), transparent);"></div>
+<!-- =========================
+  WORK SECTION - MANUAL SLIDER (3 cards visible)
+========================= -->
+<section id="work" class="relative z-10 px-6 md:px-12 lg:px-20 py-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-sm font-medium tracking-widest uppercase mb-4"
+         style="font-family: 'Inter', sans-serif; color: var(--primary-action);">
+        My Portfolio
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold"
+          style="font-family: 'Playfair Display', serif;">
+        Featured Work
+      </h2>
+    </div>
+
+    <!-- Slider -->
+    <div class="work-slider">
+      <button class="work-arrow work-prev" type="button" aria-label="Previous">‹</button>
+
+      <div class="work-viewport">
+        <div class="work-track" id="workTrack">
+
+          <!-- 1) MyGreenBin -->
+          <a class="card-hover group cursor-pointer work-card" href="https://www.mygreenbin.in" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 201340.png" alt="MyGreenBin" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">MyGreenBin</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Brand Portfolio</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- 2) Cool N Safe -->
+          <a class="card-hover group cursor-pointer work-card" href="https://www.coolnsafe.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 205156.png" alt="Cool N Safe" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Cool N Safe</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Brand Portfolio</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- 3) Recyclix Innovations -->
+          <a class="card-hover group cursor-pointer work-card" href="https://www.recyclixinnovations.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 205403.png" alt="Recyclix Innovations" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Recyclix Innovations</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Brand Portfolio</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- 4) Greenrich Bazaar -->
+          <a class="card-hover group cursor-pointer work-card" href="https://www.greenrichbazaar.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 205403.png" alt="Greenrich Bazaar" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Greenrich Bazaar</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Multi-Vendor E-Commerce</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- 5) Thirumayam Ayyappa Silks -->
+          <a class="card-hover group cursor-pointer work-card" href="https://thirumayamayyappasilks.com" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 205319.png" alt="Ayyappa Silks" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Ayyappa Silks</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Brand Website</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- 6) Editor Udhayaprakash -->
+          <a class="card-hover group cursor-pointer work-card" href="https://www.editorudhayaprakash.in" target="_blank" rel="noopener">
+            <div class="rounded-2xl overflow-hidden h-full" style="background: var(--surface);">
+              <div class="aspect-video relative overflow-hidden">
+                <img src="Screenshot 2026-02-25 205245.png" alt="Editor Udhayaprakash" class="w-full h-full object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span class="px-6 py-2 rounded-full text-sm font-medium"
+                        style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+                    View Website
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2" style="font-family: 'Playfair Display', serif;">Editor Udhayaprakash</h3>
+                <p class="text-sm opacity-60" style="font-family: 'Inter', sans-serif;">Personal Portfolio</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <button class="work-arrow work-next" type="button" aria-label="Next">›</button>
     </div>
   </div>
 
-  <div class="wrap">
-    <!-- HERO -->
-    <div class="hero">
-      <div class="card">
-        <span class="tag">E-Commerce Operations • Marketplace Management • Digital Marketing</span>
-        <h1>Helping brands grow on Amazon / Flipkart / Meesho / JioMart</h1>
-        <p class="lead">
-          Results-driven E-Commerce & Digital Operations professional with experience in online marketplace management,
-          CRM (Odoo), digital marketing, SEO, and customer relationship management. :contentReference[oaicite:1]{index=1}
-        </p>
-        <div class="actions">
-          <!-- Update these links -->
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="ghost" href="https://www.linkedin.com/in/mahesh542" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="ghost" href="#" target="_blank" rel="noreferrer">Resume PDF (add link)</a>
-        </div>
-      </div>
+  <!-- Slider CSS + JS (HTML ONLY) -->
+  <style>
+    .work-slider{ position:relative; }
+    .work-viewport{ overflow:hidden; }
+    .work-track{
+      display:flex;
+      gap:24px;
+      transition:transform 450ms ease;
+      will-change:transform;
+    }
+    /* 3 cards on desktop */
+    .work-card{ flex:0 0 calc((100% - 48px) / 3); }
+    /* 2 cards on tablet */
+    @media (max-width:1024px){ .work-card{ flex-basis: calc((100% - 24px)/2);} }
+    /* 1 card on mobile */
+    @media (max-width:640px){ .work-card{ flex-basis: 100%; } }
 
-      <div class="card">
-        <h2 style="margin:0 0 10px;">Quick Info</h2>
-        <p class="muted" style="margin:0 0 10px;">📍 Dindigul, Tamil Nadu (India)</p>
-        <p class="muted" style="margin:0 0 10px;">📞 +91 9655735712</p>
-        <p class="muted" style="margin:0 0 10px;">✉️ Maheshboopathi542@gmail.com</p>
-        <p class="muted" style="margin:0;">🎯 Open to: E-Commerce / Digital Ops roles</p>
-        <div class="chips">
-          <span class="chip">Amazon Ops</span>
-          <span class="chip">Odoo CRM</span>
-          <span class="chip">Meta Ads</span>
-          <span class="chip">SEO</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <div id="about" class="section">
-      <h2>About</h2>
-      <div class="card">
-        <p class="muted" style="margin:0; line-height:1.75;">
-          I manage end-to-end seller operations across marketplaces, improve product visibility with catalog & content optimization,
-          run digital campaigns (Meta Ads), and support CRM-driven lead nurturing and customer engagement. :contentReference[oaicite:2]{index=2}
-        </p>
-      </div>
-    </div>
-
-    <!-- SKILLS -->
-    <div id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="card">
-        <div class="chips">
-          <span class="chip">Marketplace Ops (Amazon/Flipkart/Meesho/JioMart)</span>
-          <span class="chip">Product Listing Optimization</span>
-          <span class="chip">Catalog & A+ Content</span>
-          <span class="chip">Pricing Strategy</span>
-          <span class="chip">Order Fulfillment</span>
-          <span class="chip">Meta Ads (FB/Instagram)</span>
-          <span class="chip">Google Ads</span>
-          <span class="chip">Amazon Ads</span>
-          <span class="chip">Email Marketing</span>
-          <span class="chip">WhatsApp Marketing</span>
-          <span class="chip">CRM (Odoo)</span>
-          <span class="chip">SEO (On-page & Technical)</span>
-          <span class="chip">Google Analytics</span>
-          <span class="chip">Search Console</span>
-          <span class="chip">Reporting & Data Analysis</span>
-          <span class="chip">WordPress</span>
-          <span class="chip">Figma (Basic)</span>
-          <span class="chip">Excel</span>
-          <span class="chip">Linux (Ubuntu)</span>
-          <span class="chip">Python (Basic)</span>
-        </div>
-        <p class="muted" style="margin:10px 0 0;">
-          (All skills listed are taken from your resume.) :contentReference[oaicite:3]{index=3}
-        </p>
-      </div>
-    </div>
-
-    <!-- EXPERIENCE -->
-    <div id="experience" class="section">
-      <h2>Experience</h2>
-      <div class="card timeline">
-
-        <div class="role">
-          <div class="roleTop">
-            <strong>Business Development Executive — Greenrich Enviro Solutions Pvt. Ltd.</strong>
-            <span class="muted">Sep 2024 – Present</span>
-          </div>
-          <ul>
-            <li>Ran email marketing through Odoo CRM: segmentation, promotional messaging, scheduled follow-ups.</li>
-            <li>Executed WhatsApp marketing campaigns (AISENZY) to promote offers and product updates.</li>
-            <li>Developed WordPress corporate & e-commerce websites with payment gateway, lead forms, WhatsApp chat, SEO.</li>
-            <li>Implemented on-page + technical SEO and page speed optimization to improve visibility and rankings.</li>
-          </ul>
-          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:4]{index=4}</p>
-        </div>
-
-        <div class="role">
-          <div class="roleTop">
-            <strong>Customer Relationship Executive — CAFS Infotech Pvt. Ltd., Chennai</strong>
-            <span class="muted">Mar 2024 – Sep 2024</span>
-          </div>
-          <ul>
-            <li>Handled customer interactions, service inquiries and escalations; ensured satisfaction and retention.</li>
-            <li>Provided pre-sales and post-sales support; coordinated with sales/ops/accounts for billing & order issues.</li>
-            <li>Updated CRM, tracked engagement, and prepared service/sales reports; analyzed feedback for improvements.</li>
-          </ul>
-          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:5]{index=5}</p>
-        </div>
-
-        <div class="role">
-          <div class="roleTop">
-            <strong>Customer Support Engineer — Eureka Forbes Pvt. Ltd., Coimbatore</strong>
-            <span class="muted">Nov 2021 – Sep 2023</span>
-          </div>
-          <ul>
-            <li>Delivered on-site & remote technical support, troubleshooting, installation, preventive maintenance.</li>
-            <li>Diagnosed hardware/system issues; maintained service records and technical reports; supported CRM updates.</li>
-            <li>Conducted customer training and escalated complex issues to engineering teams.</li>
-          </ul>
-          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:6]{index=6}</p>
-        </div>
-
-        <div class="role">
-          <div class="roleTop">
-            <strong>E-Commerce Operations & Marketplace Management (Key Highlights)</strong>
-            <span class="muted">Highlights</span>
-          </div>
-          <ul>
-            <li>Executed end-to-end seller operations: listing, catalog optimization, pricing strategy, fulfillment.</li>
-            <li>Optimized A+ content, brand store layouts, comparison tables, and product images to improve conversion.</li>
-            <li>Launched festival campaigns, coupons, lightning deals; tracked metrics and prepared sales/ROI reports.</li>
-          </ul>
-          <p class="muted" style="margin:6px 0 0;">:contentReference[oaicite:7]{index=7}</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PROJECTS -->
-    <div id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="grid3">
-        <div class="card item">
-          <h3>Brand Portfolio</h3>
-          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.mygreenbin.in" target="_blank" rel="noreferrer">MyGreenBin.in</a></p>
-        </div>
-        <div class="card item">
-          <h3>Brand Website</h3>
-          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.recyclixinnovations.com" target="_blank" rel="noreferrer">RecyclixInnovations.com</a></p>
-        </div>
-        <div class="card item">
-          <h3>Multi-Vendor E-Commerce</h3>
-          <p>Website: <a class="btn" style="padding:8px 10px" href="https://www.greenrichbazaar.com" target="_blank" rel="noreferrer">GreenrichBazaar.com</a></p>
-        </div>
-      </div>
-
-      <div class="grid2" style="margin-top:14px;">
-        <div class="card item">
-          <h3>Multiple Interface-Based Firefighting Robot (2021)</h3>
-          <p>Arduino-based automated robot integrating multiple sensors for fire detection and response.</p>
-        </div>
-        <div class="card item">
-          <h3>Embedded Contact Management System (2023)</h3>
-          <p>Microcontroller-based contact management solution developed during Emertxe Institute training.</p>
-        </div>
-      </div>
-
-      <p class="muted" style="margin-top:10px;">:contentReference[oaicite:8]{index=8}</p>
-    </div>
-
-    <!-- EDUCATION + CERTS -->
-    <div id="education" class="section">
-      <h2>Education & Certifications</h2>
-      <div class="grid2">
-        <div class="card item">
-          <h3>B.E. (Electronics and Communication Engineering)</h3>
-          <p>NPR College of Engineering and Technology, Natham</p>
-          <p class="muted">Year of Graduation: 2021 • CGPA: 6.9</p>
-          <p class="muted" style="margin-top:8px;">:contentReference[oaicite:9]{index=9}</p>
-        </div>
-        <div class="card item">
-          <h3>Certifications</h3>
-          <ul class="muted" style="margin:8px 0 0 18px; line-height:1.7;">
-            <li>Embedded Systems & Linux Training — Emertxe Technology (6 Months)</li>
-            <li>Recent Trends in Embedded Technology — NPR College (2019)</li>
-            <li>Smart India Hackathon (Internal) — NPR College (2020)</li>
-          </ul>
-          <p class="muted" style="margin-top:8px;">:contentReference[oaicite:10]{index=10}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="grid2">
-        <div class="card item">
-          <h3>Email</h3>
-          <p><a class="btn" style="padding:8px 10px" href="mailto:Maheshboopathi542@gmail.com">Maheshboopathi542@gmail.com</a></p>
-          <p class="muted" style="margin-top:10px;">Phone: +91 9655735712</p>
-          <p class="muted">Location: Dindigul, Tamil Nadu</p>
-          <p class="muted">:contentReference[oaicite:11]{index=11}</p>
-        </div>
-        <div class="card item">
-          <h3>Links</h3>
-          <p class="muted" style="margin:0 0 10px;">Update/replace these if needed:</p>
-          <div class="actions" style="margin-top:0;">
-            <a class="ghost" href="https://www.linkedin.com/in/mahesh542" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="ghost" href="#" target="_blank" rel="noreferrer">GitHub (add link)</a>
-            <a class="ghost" href="#" target="_blank" rel="noreferrer">Resume PDF (add link)</a>
-          </div>
-          <p class="muted" style="margin-top:10px;">Languages: Tamil, English :contentReference[oaicite:12]{index=12}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      © <span id="y"></span> K. Mahesh Boopathi • Hosted on GitHub Pages
-    </div>
-  </div>
+    .work-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:10;
+      width:44px;height:44px;
+      border:none;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:28px;
+      line-height:44px;
+      color:var(--text);
+      background:rgba(22,22,29,0.75);
+      backdrop-filter: blur(8px);
+    }
+    .work-prev{ left:-10px; }
+    .work-next{ right:-10px; }
+    @media (max-width:640px){ .work-prev{ left:6px; } .work-next{ right:6px; } }
+  </style>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    (function(){
+      const track = document.getElementById("workTrack");
+      const prev = document.querySelector(".work-prev");
+      const next = document.querySelector(".work-next");
+      if(!track || !prev || !next) return;
+
+      let index = 0;
+
+      function gapPx(){
+        return parseFloat(getComputedStyle(track).gap || "0");
+      }
+
+      function cardStep(){
+        const card = track.querySelector(".work-card");
+        if(!card) return 0;
+        return card.getBoundingClientRect().width + gapPx();
+      }
+
+      function visible(){
+        const w = window.innerWidth;
+        if(w <= 640) return 1;
+        if(w <= 1024) return 2;
+        return 3;
+      }
+
+      function maxIndex(){
+        const total = track.querySelectorAll(".work-card").length;
+        return Math.max(0, total - visible());
+      }
+
+      function render(){
+        track.style.transform = `translateX(${-index * cardStep()}px)`;
+      }
+
+      next.addEventListener("click", function(){
+        index = (index >= maxIndex()) ? 0 : index + 1;
+        render();
+      });
+
+      prev.addEventListener("click", function(){
+        index = (index <= 0) ? maxIndex() : index - 1;
+        render();
+      });
+
+      window.addEventListener("resize", function(){
+        if(index > maxIndex()) index = 0;
+        render();
+      });
+
+      render();
+    })();
+    
   </script>
+</section>
+    <!-- Contact Section -->
+    <section id="contact" class="relative z-10 px-6 md:px-12 lg:px-20 py-24" style="background: var(--surface);">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm font-medium tracking-widest uppercase mb-4"
+           style="font-family: 'Inter', sans-serif; color: var(--primary-action);">
+          Let's Connect
+        </p>
+
+        <h2 class="text-4xl md:text-6xl font-bold mb-6"
+            style="font-family: 'Playfair Display', serif;" id="contact-heading">
+          Get In Touch
+        </h2>
+
+        <p class="text-lg opacity-70 mb-12 max-w-2xl mx-auto"
+           style="font-family: 'Inter', sans-serif;" id="contact-description">
+          <!-- Put your contact line -->
+          Open to roles in E-commerce / Marketplace / Digital Marketing. Reach out for opportunities.
+        </p>
+
+        <!-- NOTE: This form only shows success message (no email is sent). -->
+        <form class="max-w-xl mx-auto"
+              onsubmit="event.preventDefault(); document.getElementById('success-message').classList.remove('hidden'); this.reset();">
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <input type="text" placeholder="Your Name" required
+                   class="w-full px-6 py-4 rounded-xl border-none outline-none focus:ring-2 transition-all"
+                   style="background: var(--background); font-family: 'Inter', sans-serif; --tw-ring-color: var(--primary-action);" />
+            <input type="email" placeholder="Your Email" required
+                   class="w-full px-6 py-4 rounded-xl border-none outline-none focus:ring-2 transition-all"
+                   style="background: var(--background); font-family: 'Inter', sans-serif; --tw-ring-color: var(--primary-action);" />
+          </div>
+
+          <textarea placeholder="Your Message" rows="5" required
+                    class="w-full px-6 py-4 rounded-xl border-none outline-none focus:ring-2 transition-all resize-none mb-6"
+                    style="background: var(--background); font-family: 'Inter', sans-serif; --tw-ring-color: var(--primary-action);"></textarea>
+
+          <button type="submit"
+                  class="w-full md:w-auto px-12 py-4 rounded-full font-medium transition-all hover:scale-105 hover:shadow-xl"
+                  style="background: var(--primary-action); font-family: 'Inter', sans-serif;">
+            Send Message
+          </button>
+        </form>
+
+        <div id="success-message" class="hidden mt-6 p-4 rounded-xl" style="background: var(--background);">
+          <p class="text-lg" style="color: var(--primary-action); font-family: 'Inter', sans-serif;">
+            ✨ Thanks for reaching out! I'll get back to you soon.
+          </p>
+        </div>
+
+        <!-- Social Links (replace # with real links) -->
+        <div class="flex justify-center gap-6 mt-16" style="font-family: 'Inter', sans-serif;">
+          <a href="mailto:yourmail@example.com" class="px-6 py-3 rounded-full" style="background: var(--background);">Email</a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="px-6 py-3 rounded-full" style="background: var(--background);">LinkedIn</a>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="px-6 py-3 rounded-full" style="background: var(--background);">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 px-6 md:px-12 lg:px-20 py-8 text-center" style="background: var(--background);">
+      <p class="text-sm opacity-50" style="font-family: 'Inter', sans-serif;">
+        © 2026 <span id="footer-name">K. Mahesh Boopathi</span>. Crafted with ❤️
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
