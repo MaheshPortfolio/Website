@@ -444,18 +444,19 @@
 </section>
 
 <style>
-.logo-section{
-  width:100%;
-  padding:70px 0;
-  overflow:hidden;
-  position:relative;
+.logo-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  background: rgba(0,0,0,0.4);
+  z-index:0;
+}
 
-  /* NEW Dark Gradient Background */
-  background: linear-gradient(
-    135deg,
-    rgba(10,10,15,0.95),
-    rgba(22,22,29,0.95)
-  );
+.logo-section *{
+  position:relative;
+  z-index:1;
 }
 .logo-title{
   text-align:center;
@@ -897,6 +898,7 @@
   </div>
 </body>
 </html>
+
 
 
 
